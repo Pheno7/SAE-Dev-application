@@ -15,6 +15,6 @@ La version à jour et utilisée dans le rendu vidéo est consignée dans le doss
 
 ---
 
-Le dossier VieLibre Intermédiaire correspond à la version 1 du projet de refonte, qui a été gardée à titre indicatif mais n'est pas à prendre en compte. Celle-ci s'étend jusqu'au 12e commit (intitulé "v1 du html"). Elle ne contient que la refonte de la page d'accueil du site.
+Le dossier VieLibre Intermédiaire correspond à la version 1 du projet de refonte, qui a été gardée à titre indicatif mais n'est pas à prendre en compte. Elle ne contient que la refonte de la page d'accueil du site.
 
 ---
