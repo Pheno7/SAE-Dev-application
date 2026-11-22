@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nous contacter – Addictions Alcool Vie Libre (prototype SAE)</title>
+  <meta name="description" content="Écrire à l'association Addictions Alcool Vie Libre ou trouver ses coordonnées.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&family=Lobster&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <!-- EN-TÊTE -->
+  <header class="entete" id="haut" tabindex="-1">
+    <div class="conteneur entete-haut">
+      <a href="index.html" class="logo">
+        <img src="img/logo-vielibre.jpg" alt="Addictions Alcool Vie Libre – accueil" width="463" height="209">
+      </a>
+      <a href="https://www.vielibre.org/espace-adherents/" class="bouton-comite">Espace comité</a>
+      <button type="button" class="bouton-menu" id="boutonMenu" aria-expanded="false" aria-controls="menuPrincipal">Menu</button>
+    </div>
+
+    <nav class="menu" id="menuPrincipal" aria-label="Menu principal">
+      <ul class="conteneur">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="https://www.vielibre.org/qui-sommes-nous/">Qui sommes-nous ?</a></li>
+        <li><a href="https://www.vielibre.org/ou-nous-trouver/">Se rencontrer</a></li>
+        <li><a href="https://www.vielibre.org/nos-actualites/">Nos actualités</a></li>
+        <li><a href="https://www.vielibre.org/ou-en-etes-vous/">Où en êtes-vous ?</a></li>
+        <li><a href="nous-contacter.html" aria-current="page">Nous contacter</a></li>
+      </ul>
+    </nav>
+
+    <p class="accroche"><span class="conteneur">… entraide, parole, prévention, amitié …</span></p>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+    <div class="conteneur">
+
+      <nav class="fil-ariane" aria-label="Fil d'Ariane">
+        <ol>
+          <li><a href="index.html">Accueil</a></li>
+          <li aria-current="page">Nous contacter</li>
+        </ol>
+      </nav>
+
+      <h1 class="titre-page">Nous contacter</h1>
+
+      <div class="contact-grille">
+
+        <!-- FORMULAIRE -->
+        <section class="bloc-formulaire" aria-labelledby="titre-formulaire">
+          <h2 id="titre-formulaire">Écrire à l'association</h2>
+          <p class="aide">Les champs marqués d'un astérisque (*) sont obligatoires.</p>
+
+          <form id="formContact" novalidate>
+            <!-- aria-describedby relie le champ à son message d'erreur, le lecteur d'écran le lit avec le champ -->
+            <div class="champ">
+              <label for="nom">Votre nom <span aria-hidden="true">*</span></label>
+              <input type="text" id="nom" name="nom" autocomplete="name" required aria-describedby="erreur-nom">
+              <p class="message-erreur" id="erreur-nom"></p>
+            </div>
+
+            <div class="champ">
+              <label for="email">Votre e-mail <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="aide-email erreur-email">
+              <p class="aide" id="aide-email">Exemple : prenom.nom@exemple.fr</p>
+              <p class="message-erreur" id="erreur-email"></p>
+            </div>
+
+            <div class="champ">
+              <label for="message">Votre message <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="6" required aria-describedby="erreur-message"></textarea>
+              <p class="message-erreur" id="erreur-message"></p>
+            </div>
+
+            <div class="champ champ-case">
+              <input type="checkbox" id="consentement" name="consentement" required aria-describedby="erreur-consentement">
+              <label for="consentement">En soumettant ce formulaire, j'accepte que les informations saisies soient utilisées pour répondre à ma demande. Mon adresse e-mail est conservée 18 mois. Je peux demander sa suppression à tout moment. <span aria-hidden="true">*</span></label>
+              <p class="message-erreur" id="erreur-consentement"></p>
+            </div>
+
+            <button type="submit" class="bouton">Envoyer le message</button>
+            <p class="message-formulaire" id="messageFormulaire" role="status"></p>
+          </form>
+        </section>
+
+        <!-- COORDONNÉES -->
+        <section class="bloc-coordonnees" aria-labelledby="titre-coordonnees">
+          <h2 id="titre-coordonnees">Nos coordonnées</h2>
+          <p><strong>Siège de l'association</strong><br>
+            Addictions Alcool Vie Libre<br>
+            8 rue René Cassin<br>
+            51430 Bezannes</p>
+          <p>Téléphone : <a href="tel:+33326873178">03 26 87 31 78</a></p>
+
+          <h3>Vous cherchez un groupe près de chez vous ?</h3>
+          <p>Chaque section locale a ses propres jours de rencontre. Le plus rapide est de la contacter directement.</p>
+          <a class="bouton" href="https://www.vielibre.org/ou-nous-trouver/">Trouver une section</a>
+        </section>
+
+      </div>
+
+      <!-- FAQ -->
+      <!-- details/summary s'ouvre au clic et au clavier (Entrée, Espace) sans JavaScript -->
+      <section class="faq" aria-labelledby="titre-faq">
+        <h2 id="titre-faq">Questions fréquentes</h2>
+
+        <details>
+          <summary>Comment trouver un groupe Vie Libre près de chez moi&nbsp;?</summary>
+          <p>Les sections locales sont classées par région puis par département sur la page <a href="https://www.vielibre.org/ou-nous-trouver/">Se rencontrer</a>. Chacune indique ses jours de réunion ou de permanence, son téléphone et son adresse e-mail.</p>
+        </details>
+
+        <details>
+          <summary>Je ne sais pas si ma consommation d'alcool pose problème. Par où commencer&nbsp;?</summary>
+          <p>La rubrique <a href="https://www.vielibre.org/ou-en-etes-vous/">Où en êtes-vous&nbsp;?</a> propose des questionnaires pour faire le point, comme le questionnaire AUDIT ou le DETA/CAGE. Vous pouvez ensuite en parler avec une section locale.</p>
+        </details>
+
+        <details>
+          <summary>J'ai besoin de parler à quelqu'un tout de suite.</summary>
+          <p>Alcool Info Service répond 7 jours sur 7, de 8 h à 2 h, au <a href="tel:+33980980930">0 980 980 930</a> (appel non surtaxé). C'est un service national anonyme, indépendant de Vie Libre.</p>
+        </details>
+
+        <details>
+          <summary>Que deviennent les informations que j'envoie avec ce formulaire&nbsp;?</summary>
+          <p>Elles servent uniquement à répondre à votre demande et sont transmises aux services de l'association concernés. Vous pouvez demander à les consulter, à les corriger ou à les supprimer : par ce formulaire, par courrier au siège ou par téléphone au 03 26 87 31 78. L'association a deux mois pour vous répondre. Détails sur la page <a href="https://www.vielibre.org/donnees-personnelles/">Données personnelles</a>.</p>
+        </details>
+
+        <details>
+          <summary>À quoi sert le bouton «&nbsp;Espace comité&nbsp;»&nbsp;?</summary>
+          <p>C'est l'espace de connexion réservé aux comités de l'association, avec un identifiant et un mot de passe. Il ne sert pas à prendre contact : pour cela, utilisez le formulaire ci-dessus ou contactez une section locale.</p>
+        </details>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- BANDEAU D'AIDE -->
+  <aside class="bandeau-aide" aria-labelledby="titre-aide">
+    <div class="conteneur bandeau-aide-contenu">
+      <div>
+        <h2 id="titre-aide">Besoin de parler à quelqu'un maintenant ?</h2>
+        <p>Alcool Info Service, service national anonyme : 7 jours sur 7, de 8 h à 2 h, appel non surtaxé.</p>
+      </div>
+      <a class="bouton" href="tel:+33980980930">Appeler le 0 980 980 930</a>
+    </div>
+  </aside>
+
+  <!-- PIED DE PAGE -->
+  <footer class="pied">
+    <div class="conteneur pied-grille">
+      <div>
+        <p class="pied-titre">Addictions Alcool Vie Libre</p>
+        <p>8 rue René Cassin<br>51430 Bezannes</p>
+        <p><a href="tel:+33326873178">03 26 87 31 78</a></p>
+      </div>
+      <nav aria-label="Plan du site">
+        <ul class="pied-liens">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="https://www.vielibre.org/qui-sommes-nous/">Qui sommes-nous ?</a></li>
+          <li><a href="https://www.vielibre.org/ou-nous-trouver/">Se rencontrer</a></li>
+          <li><a href="https://www.vielibre.org/nos-actualites/">Nos actualités</a></li>
+          <li><a href="https://www.vielibre.org/ou-en-etes-vous/">Où en êtes-vous ?</a></li>
+          <li><a href="nous-contacter.html">Nous contacter</a></li>
+          <li><a href="https://www.vielibre.org/mentions-legales/">Mentions légales</a></li>
+          <li><a href="https://www.vielibre.org/donnees-personnelles/">Données personnelles</a></li>
+          <li><a href="https://www.vielibre.org/politique-de-confidentialite/">Cookies</a></li>
+        </ul>
+      </nav>
+      <ul class="mots-cles" aria-label="Nos valeurs">
+        <li>libre</li><li>santé publique</li><li>addictions</li><li>entraide</li><li>amitié</li>
+        <li>prévention</li><li>mouvement laïque</li><li>éducation populaire</li><li>parole</li>
+      </ul>
+    </div>
+    <p class="pied-prototype">Prototype étudiant – SAE S3, BUT Informatique, IUT Paris Rives de Seine (2026-2027). Site officiel de l'association : <a href="https://www.vielibre.org">www.vielibre.org</a></p>
+  </footer>
+
+  <a href="#haut" class="retour-haut" id="retourHaut" hidden>Haut de page</a>
+
+  <!-- BANDEAU COOKIES -->
+  <div class="bandeau-cookies" id="bandeauCookies" role="region" aria-label="Choix des cookies" hidden>
+    <p>Nous déposons des cookies de mesure d'audience seulement si vous l'acceptez. <a href="https://www.vielibre.org/politique-de-confidentialite/">En savoir plus</a></p>
+    <div class="bandeau-cookies-boutons">
+      <button type="button" class="bouton" data-choix="accepte">Accepter</button>
+      <button type="button" class="bouton" data-choix="refuse">Refuser</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
