@@ -1,110 +1,133 @@
 //MENU RESPONSIVE
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
+const boutonMenu = document.getElementById("boutonMenu");
+const menuPrincipal = document.getElementById("menuPrincipal");
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = mainNav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", isOpen);
+boutonMenu.addEventListener("click", () => {
+  const estOuvert = menuPrincipal.classList.toggle("ouvert");
+  boutonMenu.setAttribute("aria-expanded", estOuvert);
 });
 
 //CARROUSEL
-const slides = document.querySelectorAll(".slide");
-const dotsContainer = document.getElementById("dots");
-const carousel = document.getElementById("carousel");
-let current = 0;
-let timer;
+const diapositives = document.querySelectorAll(".diapositive");
+const conteneurPoints = document.getElementById("points");
+const carrousel = document.getElementById("carrousel");
+let actuel = 0;
+let minuteur;
 
-slides.forEach((_, i) => {
-  const dot = document.createElement("button");
-  dot.className = "dot" + (i === 0 ? " active" : "");
-  dot.setAttribute("aria-label", "Aller à l'actualité " + (i + 1));
-  dot.addEventListener("click", () => {
-    goTo(i);
-    restartAuto();
+diapositives.forEach((_, i) => {
+  const point = document.createElement("button");
+  point.className = "point" + (i === 0 ? " active" : "");
+  point.setAttribute("aria-label", "Aller à l'actualité " + (i + 1));
+  point.addEventListener("click", () => {
+    allerA(i);
+    relancerAuto();
   });
-  dotsContainer.appendChild(dot);
+  conteneurPoints.appendChild(point);
 });
-const dots = document.querySelectorAll(".dot");
+const points = document.querySelectorAll(".point");
 
-function goTo(index) {
-  slides[current].classList.remove("active");
-  dots[current].classList.remove("active");
-  current = (index + slides.length) % slides.length;
-  slides[current].classList.add("active");
-  dots[current].classList.add("active");
+function allerA(index) {
+  diapositives[actuel].classList.remove("active");
+  points[actuel].classList.remove("active");
+  actuel = (index + diapositives.length) % diapositives.length;
+  diapositives[actuel].classList.add("active");
+  points[actuel].classList.add("active");
 }
 
-document.getElementById("nextBtn").addEventListener("click", () => { // BUG B4 : plante ici s'il n'y a pas de carrousel
-  goTo(current + 1);
-  restartAuto();
+document.getElementById("boutonSuivant").addEventListener("click", () => { // BUG B4 : plante ici s'il n'y a pas de carrousel
+  allerA(actuel + 1);
+  relancerAuto();
 });
-document.getElementById("prevBtn").addEventListener("click", () => {
-  goTo(current - 1);
-  restartAuto();
+document.getElementById("boutonPrecedent").addEventListener("click", () => {
+  allerA(actuel - 1);
+  relancerAuto();
 });
 
-function startAuto() {
-  timer = setInterval(() => goTo(current + 1), 5000);
+function demarrerAuto() {
+  minuteur = setInterval(() => allerA(actuel + 1), 5000);
 }
-function restartAuto() {
-  clearInterval(timer);
-  startAuto();
+function relancerAuto() {
+  clearInterval(minuteur);
+  demarrerAuto();
 }
 
 
-carousel.addEventListener("mouseenter", () => clearInterval(timer));
-carousel.addEventListener("mouseleave", startAuto);
-startAuto();
+carrousel.addEventListener("mouseenter", () => clearInterval(minuteur));
+carrousel.addEventListener("mouseleave", demarrerAuto);
+demarrerAuto();
 
 //FORMULAIRE DE CONTACT
-const form = document.getElementById("contactForm");
-const formMsg = document.getElementById("formMsg");
+const formulaire = document.getElementById("formContact");
+const messageFormulaire = document.getElementById("messageFormulaire");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let valid = true;
+formulaire.addEventListener("submit", (evenement) => {
+  evenement.preventDefault();
+  let valide = true;
 
-  form.querySelectorAll("input, textarea").forEach((field) => {
-    const empty = field.value.trim() === "";
-    const badEmail =
-      field.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
-    const hasError = empty || badEmail;
-    field.classList.toggle("error", hasError);
-    if (hasError) valid = false;
+  formulaire.querySelectorAll("input, textarea").forEach((champ) => {
+    const vide = champ.value.trim() === "";
+    const emailInvalide =
+      champ.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(champ.value);
+    const enErreur = vide || emailInvalide;
+    champ.classList.toggle("erreur", enErreur);
+    if (enErreur) valide = false;
   });
 
-  if (valid) {
-    formMsg.textContent = "Merci, votre message a bien été envoyé (simulation).";
-    formMsg.className = "form-msg ok";
-    form.reset();
+  if (valide) {
+    messageFormulaire.textContent = "Merci, votre message a bien été envoyé (simulation).";
+    messageFormulaire.className = "message-formulaire ok";
+    formulaire.reset();
   } else {
-    formMsg.textContent = "Merci de remplir correctement tous les champs.";
-    formMsg.className = "form-msg ko";
+    messageFormulaire.textContent = "Merci de remplir correctement tous les champs.";
+    messageFormulaire.className = "message-formulaire ko";
   }
 });
 
 //BOUTON RETOUR EN HAUT
-const toTop = document.getElementById("toTop");
+const retourHaut = document.getElementById("retourHaut");
 
 window.addEventListener("scroll", () => {
-  toTop.hidden = window.scrollY < 600;
+  retourHaut.hidden = window.scrollY < 600;
 });
-toTop.addEventListener("click", () => {
+retourHaut.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 //BANDEAU COOKIES
-const banner = document.getElementById("cookieBanner");
+const bandeau = document.getElementById("bandeauCookies");
 
 try {
-  if (!localStorage.getItem("cookiesAccepted")) banner.hidden = false;
-} catch (e) {
-  banner.hidden = false;
+  if (!localStorage.getItem("cookiesAcceptes")) bandeau.hidden = false;
+} catch (erreur) {
+  bandeau.hidden = false;
 }
 
-document.getElementById("cookieAccept").addEventListener("click", () => {
-  banner.hidden = true;
+document.getElementById("accepterCookies").addEventListener("click", () => {
+  bandeau.hidden = true;
   try {
-    localStorage.setItem("cookiesAccepted", "yes");
-  } catch (e) {}
+    localStorage.setItem("cookiesAcceptes", "oui");
+  } catch (erreur) {}
 });
+
+// bugs relevés lors du controle de la v1 :
+
+// BUG : aucune fonction ne vérifie que ses éléments existent.
+// Sur une page sans carrousel, getElementById renvoie null et la ligne
+// document.getElementById("boutonSuivant").addEventListener(...) plante :
+// tout ce qui est écrit après (formulaire, retour en haut, cookies) ne s'exécute pas.
+// BUG : seulement une classe (bordure rouge), aucun message sous le champ
+// BUG : les informations sont recopiées telles qu'elles sont dans les données, sans règle d'affichage commune.
+// BUG : quand on clique sur une flèche pendant le survol, relancerAuto() relance un minuteur.
+// En quittant le carrousel, demarrerAuto() en lance un deuxième sans arrêter le premier
+// La variable minuteur ne garde que le dernier : l'ancien tourne
+// toujours et on ne peut plus l'arrêter. À chaque fois, le défilement va plus vite.
+//BUG : aucun style de focus. Pire : on l'enlève sur le menu, les boutons
+// et les champs parce que le contour « faisait moche ». Au clavier, on ne voit
+//plus où on est. 
+// BUG : pas de règle pour la page en cours 
+// BUG : l'erreur n'est indiquée que par la couleur de la bordure
+// BUG : le menu fermé a une hauteur de 0, mais ses liens existent toujours.
+//Avec Tab, on passe dessus sans les voir (on ne sait plus où est le focus).
+//BUG: rien n'indique la page ou la rubrique en cours
+//BUG: pas de message sous les champs, seulement une bordure rouge + un message général
+//BUG : défilement automatique toutes les 5 s, pas de bouton pause 

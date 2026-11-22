@@ -31,8 +31,8 @@ a { color: var(--violet); }
 .menu a:focus,
 .bouton:focus,
 .bouton-comite:focus,
-.carousel-btn:focus,
-.dot:focus,
+.bouton-carrousel:focus,
+.point:focus,
 input:focus,
 textarea:focus { outline: none; }
 
@@ -160,8 +160,8 @@ svg  path  {
 #zoneAssos #listeDept .contenAsso:nth-child(odd) {background:#fff}
 #zoneAssos #listeDept .contenAsso:nth-child(even) {background:#dadada}
 #zoneAssos #listeDept .contenAsso p{padding:0;text-align:left;}
-#zoneAssos #listeDept .contenAsso .contentInt p,#zoneAssos #listeDept .contenAsso .contentInt div{font-size: 0.9em;padding:5px 10px;text-align:left;}
-#zoneAssos #listeDept .contentInt {padding:10px 20px;float: left;width: 100%;}
+#zoneAssos #listeDept .contenAsso .contenuInt p,#zoneAssos #listeDept .contenAsso .contenuInt div{font-size: 0.9em;padding:5px 10px;text-align:left;}
+#zoneAssos #listeDept .contenuInt {padding:10px 20px;float: left;width: 100%;}
 #zoneAssos .autreAsso .contenAsso #nomRegion {display:none}
 #zoneAssos .autreAsso .contenAsso:first-child #nomRegion {display:block}
  
@@ -183,17 +183,17 @@ svg  path  {
 }
 
 /* CARROUSEL */
-.carousel {
+.carrousel {
   position: relative;
   min-height: 260px;
   padding: 2rem 4.5rem 3rem;
   background: var(--vert-olive);
   color: var(--blanc);
 }
-.slide { display: none; }
-.slide.active { display: block; }
-.slide a { color: var(--blanc); }
-.slide h3 { margin: .3rem 0 .8rem; font-size: 1.4rem; }
+.diapositive { display: none; }
+.diapositive.active { display: block; }
+.diapositive a { color: var(--blanc); }
+.diapositive h3 { margin: .3rem 0 .8rem; font-size: 1.4rem; }
 .actu-type {
   display: inline-block;
   padding: .1rem .6rem;
@@ -203,7 +203,7 @@ svg  path  {
   font-weight: 700;
   text-transform: uppercase;
 }
-.carousel-btn {
+.bouton-carrousel {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -215,9 +215,9 @@ svg  path  {
   font-size: 1.2rem;
   cursor: pointer;
 }
-.carousel-btn.prev { left: .8rem; }
-.carousel-btn.next { right: .8rem; }
-.dots {
+.bouton-carrousel.precedent { left: .8rem; }
+.bouton-carrousel.suivant { right: .8rem; }
+.points {
   position: absolute;
   bottom: 1rem;
   left: 50%;
@@ -225,8 +225,8 @@ svg  path  {
   display: flex;
   gap: .5rem;
 }
-.dot { width: 12px; height: 12px; border: 0; border-radius: 50%; background: rgba(255,255,255,.6); cursor: pointer; }
-.dot.active { background: var(--vert); }
+.point { width: 12px; height: 12px; border: 0; border-radius: 50%; background: rgba(255,255,255,.6); cursor: pointer; }
+.point.active { background: var(--vert); }
 
 /* AGENDA */
 .agenda { max-width: 800px; }
@@ -258,10 +258,10 @@ svg  path  {
   font: inherit;
 }
 
-input.error, textarea.error { border-color: var(--rouge); background: #fdf2f1; }
-.form-msg { min-height: 1.4em; margin-top: 1rem; font-weight: 600; }
-.form-msg.ok { color: var(--vert-olive); }
-.form-msg.ko { color: var(--rouge); }
+input.erreur, textarea.erreur { border-color: var(--rouge); background: #fdf2f1; }
+.message-formulaire { min-height: 1.4em; margin-top: 1rem; font-weight: 600; }
+.message-formulaire.ok { color: var(--vert-olive); }
+.message-formulaire.ko { color: var(--rouge); }
 
 .bloc-coordonnees { padding: 1.8rem; background: var(--gris-fond); }
 .bloc-coordonnees > * + * { margin-top: 1rem; }
@@ -273,7 +273,7 @@ input.error, textarea.error { border-color: var(--rouge); background: #fdf2f1; }
 .pied-titre { font-weight: 700; text-transform: uppercase; }
 
 /* RETOUR EN HAUT (bouton géré en JS dans la v1) */
-.to-top {
+.retour-haut {
   position: fixed;
   right: 1rem;
   bottom: 5rem;
@@ -286,7 +286,7 @@ input.error, textarea.error { border-color: var(--rouge); background: #fdf2f1; }
   font-size: 1.3rem;
   cursor: pointer;
 }
-.to-top[hidden] { display: none; }
+.retour-haut[hidden] { display: none; }
 
 /* COOKIES */
 .bandeau-cookies {
@@ -326,7 +326,7 @@ input.error, textarea.error { border-color: var(--rouge); background: #fdf2f1; }
 
 
   .menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
-  .menu.open { max-height: 500px; }
+  .menu.ouvert { max-height: 500px; }
 
   .contact-grille { grid-template-columns: 1fr; gap: 2rem; }
 }
@@ -335,7 +335,7 @@ input.error, textarea.error { border-color: var(--rouge); background: #fdf2f1; }
   .logo img { width: 130px; }
   .entete-haut { flex-wrap: wrap; }
   .titre-section, .titre-page { font-size: 1.4rem; }
-  .carousel { padding: 1.5rem 1.2rem 4rem; }
-  .carousel-btn { top: auto; bottom: .6rem; transform: none; }
+  .carrousel { padding: 1.5rem 1.2rem 4rem; }
+  .bouton-carrousel { top: auto; bottom: .6rem; transform: none; }
   .pied-grille { grid-template-columns: 1fr; }
 }

@@ -18,10 +18,10 @@
         <img src="img/logo-vielibre.jpg" alt="Addictions Alcool Vie Libre – accueil" width="463" height="209">
       </a>
       <a href="#" class="bouton-comite">Espace comité</a>
-      <button class="bouton-menu" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">Menu</button>
+      <button class="bouton-menu" id="boutonMenu" aria-label="Ouvrir le menu" aria-expanded="false">Menu</button>
     </div>
 
-    <nav class="menu" id="mainNav">
+    <nav class="menu" id="menuPrincipal">
       <ul class="conteneur">
         <li><a href="#accueil">Accueil</a></li>
         <li><a href="#">Qui sommes-nous ?</a></li>
@@ -948,28 +948,28 @@
     <section class="bloc bloc-gris" id="actualites">
       <h2 class="titre-section">Nos dernières actualités</h2>
       <div class="conteneur">
-        <div class="carousel" id="carousel">
-          <div class="slide active">
+        <div class="carrousel" id="carrousel">
+          <div class="diapositive active">
             <p class="actu-type">Prévention</p>
             <h3>Affiche protoxyde d'azote</h3>
             <p>Une affiche de prévention sur le protoxyde d'azote, téléchargeable en PDF depuis la page de l'actualité.</p>
             <a href="#">en savoir plus</a>
           </div>
-          <div class="slide">
+          <div class="diapositive">
             <p class="actu-type">Actualité</p>
             <h3>J'irai le dire à tout le monde</h3>
             <p>Retrouvez cette actualité sur le site de l'association.</p>
             <a href="#">en savoir plus</a>
           </div>
-          <div class="slide">
+          <div class="diapositive">
             <p class="actu-type">Événement</p>
             <h3>Repas interassociatif au Mans</h3>
             <p>Un repas sans alcool organisé par Famla 72 avec plusieurs associations, dont Vie Libre.</p>
             <a href="#">en savoir plus</a>
           </div>
-          <button class="carousel-btn prev" id="prevBtn" aria-label="Actualité précédente">&#10094;</button>
-          <button class="carousel-btn next" id="nextBtn" aria-label="Actualité suivante">&#10095;</button>
-          <div class="dots" id="dots"></div>
+          <button class="bouton-carrousel precedent" id="boutonPrecedent" aria-label="Actualité précédente">&#10094;</button>
+          <button class="bouton-carrousel suivant" id="boutonSuivant" aria-label="Actualité suivante">&#10095;</button>
+          <div class="points" id="points"></div>
         </div>
       </div>
     </section>
@@ -1006,7 +1006,7 @@
       <h2 class="titre-section">Nous contacter</h2>
       <div class="conteneur contact-grille">
 
-        <form id="contactForm" novalidate>
+        <form id="formContact" novalidate>
           <div class="champ">
             <label for="nom">Votre nom *</label>
             <input type="text" id="nom" name="nom" required>
@@ -1020,7 +1020,7 @@
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
           <button type="submit" class="bouton">Envoyer</button>
-          <p class="form-msg" id="formMsg" role="status"></p>
+          <p class="message-formulaire" id="messageFormulaire" role="status"></p>
         </form>
 
         <div class="bloc-coordonnees">
@@ -1048,11 +1048,11 @@
     </div>
   </footer>
 
-  <button class="to-top" id="toTop" aria-label="Revenir en haut" hidden>↑</button>
+  <button class="retour-haut" id="retourHaut" aria-label="Revenir en haut" hidden>↑</button>
 
-  <div class="bandeau-cookies" id="cookieBanner" hidden>
+  <div class="bandeau-cookies" id="bandeauCookies" hidden>
     <p>Ce site utilise des cookies pour mesurer la fréquentation. <a href="#">En savoir plus</a></p>
-    <button class="bouton" id="cookieAccept">J'accepte</button>
+    <button class="bouton" id="accepterCookies">J'accepte</button>
   </div>
 
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
