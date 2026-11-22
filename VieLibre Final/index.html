@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accueil – Addictions Alcool Vie Libre (prototype SAE)</title>
+  <meta name="description" content="Prototype étudiant de refonte du site de l'association Addictions Alcool Vie Libre : entraide, parole, prévention, amitié.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&family=Lobster&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <!-- ===== EN-TÊTE ===== -->
+  <header class="entete" id="haut" tabindex="-1">
+    <div class="conteneur entete-haut">
+      <a href="index.html" class="logo">
+        <img src="img/logo-vielibre.jpg" alt="Addictions Alcool Vie Libre – accueil" width="463" height="209">
+      </a>
+      <a href="https://www.vielibre.org/espace-adherents/" class="bouton-comite">Espace comité</a>
+      <button type="button" class="bouton-menu" id="boutonMenu" aria-expanded="false" aria-controls="menuPrincipal">Menu</button>
+    </div>
+
+    <nav class="menu" id="menuPrincipal" aria-label="Menu principal">
+      <ul class="conteneur">
+        <!-- aria-current indique la page en cours (style CSS + lecteurs d'écran) -->
+        <li><a href="index.html" aria-current="page">Accueil</a></li>
+        <li><a href="https://www.vielibre.org/qui-sommes-nous/">Qui sommes-nous ?</a></li>
+        <li><a href="https://www.vielibre.org/ou-nous-trouver/">Se rencontrer</a></li>
+        <li><a href="https://www.vielibre.org/nos-actualites/">Nos actualités</a></li>
+        <li><a href="https://www.vielibre.org/ou-en-etes-vous/">Où en êtes-vous ?</a></li>
+        <li><a href="nous-contacter.html">Nous contacter</a></li>
+      </ul>
+    </nav>
+
+    <p class="accroche"><span class="conteneur">… entraide, parole, prévention, amitié …</span></p>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+
+    <div class="conteneur intro">
+      <h1 class="titre-page">Bienvenue chez Vie Libre</h1>
+      <p>Addictions Alcool Vie Libre est un mouvement laïque d'entraide, de parole et de prévention autour de l'alcool. Ses sections locales tiennent des permanences et des groupes de parole dans toute la France.</p>
+    </div>
+
+    <!-- ===== ACTUALITÉS ===== -->
+    <section class="bloc bloc-gris" aria-labelledby="titre-actus">
+      <h2 class="titre-section" id="titre-actus">Nos dernières actualités</h2>
+      <ul class="conteneur actus">
+        <li class="actu">
+          <p class="actu-type">Prévention</p>
+          <h3><a href="https://www.vielibre.org/affiche-protoxyde-dazote/">Affiche protoxyde d'azote</a></h3>
+          <p>Une affiche de prévention sur le protoxyde d'azote, téléchargeable en PDF depuis la page de l'actualité.</p>
+        </li>
+        <li class="actu">
+          <p class="actu-type">Actualité</p>
+          <h3><a href="https://www.vielibre.org/jirai-dire-a-monde/">J'irai le dire à tout le monde</a></h3>
+          <p>Retrouvez cette actualité sur le site de l'association.</p>
+        </li>
+      </ul>
+      <p class="centre"><a href="https://www.vielibre.org/nos-actualites/">Toutes les actualités</a></p>
+    </section>
+
+    <!-- ===== AGENDA ===== -->
+    <section class="bloc" aria-labelledby="titre-agenda">
+      <h2 class="titre-section" id="titre-agenda">Agenda</h2>
+      <ul class="conteneur agenda">
+        <li class="evenement" data-date="2026-11-07">
+          <p class="evenement-date"><time datetime="2026-11-07T12:00">Samedi 7 novembre 2026 à 12 h</time></p>
+          <h3>Repas interassociatif au Mans</h3>
+          <p class="evenement-lieu">Salle Gérard Marsaud, Centre social des Quartiers Sud, 20 boulevard des Glonnières, Le Mans</p>
+          <p>Repas sans alcool, sur réservation : 20 € (entrée, plat, dessert), menu enfant 10 € jusqu'à 12 ans. Organisé par Famla 72 avec plusieurs associations, dont Vie Libre.</p>
+          <p><a href="https://www.vielibre.org/wp-content/uploads/tribe_events/affiche-couscous-PDF.pdf">Voir l'affiche (PDF, 1 page)</a></p>
+        </li>
+      </ul>
+      <p class="centre"><a href="https://www.vielibre.org/agenda/">Voir tout l'agenda</a></p>
+    </section>
+
+    <!-- ===== PARTENAIRES ===== -->
+    <section class="bloc bloc-gris" aria-labelledby="titre-partenaires">
+      <h2 class="titre-section" id="titre-partenaires">Nos partenaires</h2>
+      <ul class="conteneur partenaires">
+        <li><a href="https://www.sfalcoologie.asso.fr/">SFA – Société française d'alcoologie</a></li>
+        <li><a href="https://www.addictaide.fr/">FFA – Fédération française d'addictologie</a></li>
+        <li><a href="http://afdma22.org/">AFDMA 22</a></li>
+        <li><a href="https://www.inserm.fr/">Inserm</a></li>
+        <li><a href="https://www.camerup.fr/">CAMERUP</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ===== BANDEAU D'AIDE ===== -->
+  <aside class="bandeau-aide" aria-labelledby="titre-aide">
+    <div class="conteneur bandeau-aide-contenu">
+      <div>
+        <h2 id="titre-aide">Besoin de parler à quelqu'un maintenant ?</h2>
+        <p>Alcool Info Service, service national anonyme : 7 jours sur 7, de 8 h à 2 h, appel non surtaxé.</p>
+      </div>
+      <a class="bouton" href="tel:+33980980930">Appeler le 0 980 980 930</a>
+    </div>
+  </aside>
+
+  <!-- ===== PIED DE PAGE ===== -->
+  <footer class="pied">
+    <div class="conteneur pied-grille">
+      <div>
+        <p class="pied-titre">Addictions Alcool Vie Libre</p>
+        <p>8 rue René Cassin<br>51430 Bezannes</p>
+        <p><a href="tel:+33326873178">03 26 87 31 78</a></p>
+      </div>
+      <nav aria-label="Plan du site">
+        <ul class="pied-liens">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="https://www.vielibre.org/qui-sommes-nous/">Qui sommes-nous ?</a></li>
+          <li><a href="https://www.vielibre.org/ou-nous-trouver/">Se rencontrer</a></li>
+          <li><a href="https://www.vielibre.org/nos-actualites/">Nos actualités</a></li>
+          <li><a href="https://www.vielibre.org/ou-en-etes-vous/">Où en êtes-vous ?</a></li>
+          <li><a href="nous-contacter.html">Nous contacter</a></li>
+          <li><a href="https://www.vielibre.org/mentions-legales/">Mentions légales</a></li>
+          <li><a href="https://www.vielibre.org/donnees-personnelles/">Données personnelles</a></li>
+          <li><a href="https://www.vielibre.org/politique-de-confidentialite/">Cookies</a></li>
+        </ul>
+      </nav>
+      <ul class="mots-cles" aria-label="Nos valeurs">
+        <li>libre</li><li>santé publique</li><li>addictions</li><li>entraide</li><li>amitié</li>
+        <li>prévention</li><li>mouvement laïque</li><li>éducation populaire</li><li>parole</li>
+      </ul>
+    </div>
+    <p class="pied-prototype">Prototype étudiant – SAE S3, BUT Informatique, IUT Paris Rives de Seine (2026-2027). Site officiel de l'association : <a href="https://www.vielibre.org">www.vielibre.org</a></p>
+  </footer>
+
+  <a href="#haut" class="retour-haut" id="retourHaut" hidden>Haut de page</a>
+
+  <!-- ===== BANDEAU COOKIES ===== -->
+  <div class="bandeau-cookies" id="bandeauCookies" role="region" aria-label="Choix des cookies" hidden>
+    <p>Nous déposons des cookies de mesure d'audience seulement si vous l'acceptez. <a href="https://www.vielibre.org/politique-de-confidentialite/">En savoir plus</a></p>
+    <div class="bandeau-cookies-boutons">
+      <button type="button" class="bouton" data-choix="accepte">Accepter</button>
+      <button type="button" class="bouton" data-choix="refuse">Refuser</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
